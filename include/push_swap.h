@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 19:08:56 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:18:06 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "../libft/include/libft.h"
 
 /* Data structure */
-typedef enum e_flag_opt
+typedef enum s_flag_opt
 {
 	SIMPLE,
 	MEDIUM,
@@ -28,6 +28,12 @@ typedef enum e_flag_opt
 	BENCH,
 	UNDEFINED
 }	t_flagtype;
+
+typedef struct s_options
+{
+	t_flagtype	*options;
+	int			count;
+}	t_options;
 
 typedef struct s_stacks
 {

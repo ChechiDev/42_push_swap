@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:35:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 16:47:02 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/18 19:15:55 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_flagtype	switch_option(char	*option)
 {
-	if ((ft_strcmp(optionstr, "bench")) == 0)
-		return (BENCH);
+	if ((ft_strcmp(optionstr, "simple")) == 0)
+		return (SIMPLE);
 
 	return (UNDEFINED);
 }
