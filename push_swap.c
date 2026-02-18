@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/07 17:35:43 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 17:12:41 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/18 15:50:46 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/18 18:17:12 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/push_swap.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	main(int argc,  char **argv)
 {
-	size_t			i;
-	unsigned char	uc1;
-	unsigned char	uc2;
+	t_list		*stack_a;
+	t_list		*stack_b;
+	t_options	*options;
+	t_stacks	s;
 
-	i = 0;
-	if (n == 0)
-	{
-		return (0);
-	}
-	while (i < n)
-	{
-		uc1 = (unsigned char)s1[i];
-		uc2 = (unsigned char)s2[i];
-		if (uc1 != uc2)
-		{
-			return (uc1 - uc2);
-		}
-		if (uc1 == '\0')
-		{
-			return (0);
-		}
-		i++;
-	}
+	stack_a = NULL;
+	stack_b = NULL;
+	options = NULL;
+
 	return (0);
 }

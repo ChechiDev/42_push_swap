@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   parse_options.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 19:10:00 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/18 16:35:01 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/18 16:47:02 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../include/push_swap.h"
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <ctype.h>
+t_flagtype	switch_option(char	*option)
+{
+	if ((ft_strcmp(optionstr, "bench")) == 0)
+		return (BENCH);
 
-/* Libft functions */
-int	ft_strcmp(char *s1, char *s2);
-
-#endif
+	return (UNDEFINED);
+}

@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/18 17:07:55 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/18 18:13:01 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
-	@echo "PUSH_SWAP COMPILED!"
+	@echo "\nPUSH_SWAP COMPILED!\n"
 
 # Build libft only when needed (and only if files changed)
 $(LIBFT):
@@ -54,7 +54,7 @@ debug: $(DNAME)
 
 $(DNAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
-	@echo "PUSH_SWAP DEBUG COMPILED!"
+	@echo "\nPUSH_SWAP DEBUG COMPILED!\n"
 
 $(OBJS_DIR)/%.o: srcs/%.c Makefile include/push_swap.h
 	@mkdir -p $(OBJS_DIR)
@@ -64,10 +64,12 @@ $(OBJS_DIR)/%.o: srcs/%.c Makefile include/push_swap.h
 clean:
 	@rm -rf $(OBJS_DIR)
 	@$(MAKE) -C $(LIBFT_DIR) clean
+	@echo "\nLIBFT CLEANED\n"
 
 fclean: clean
 	@rm -f $(NAME) $(DNAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@echo "\nLIBFT FULL CLEANED\n"
 
 re: fclean all
 
