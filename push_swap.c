@@ -23,5 +23,12 @@ int	main(int argc,  char **argv)
 	stack_b = NULL;
 	options = NULL;
 
+	if (argc == 1)
+		return (0);
+	else if (argc >=2)
+	{
+
+	}
+
 	return (0);
 }
