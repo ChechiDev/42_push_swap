@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 19:18:06 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/19 18:59:38 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include "../libft/include/libft.h"
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
 
 /* Data structure */
 typedef enum s_flag_opt
@@ -45,7 +53,7 @@ typedef struct s_stacks
 
 /* Parse */
 /* Functions */
-void	clear_stash(char **stash);
+void	free_stash(char **stash);
 
 
 #endif 

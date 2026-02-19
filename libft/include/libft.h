@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 19:10:00 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/19 18:41:40 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@
 # include <stdio.h>
 # include <ctype.h>
 
-/* Libft functions */
-int	ft_strcmp(char *s1, char *s2);
+typedef struct s_list
+{
+	long			content;
+	struct s_list	*next;
+}	t_list;
 
+/* Libft functions */
+int		ft_strcmp(char *s1, char *s2);
+
+/* lists */
+t_list	*ft_lstnew(long content);
 #endif

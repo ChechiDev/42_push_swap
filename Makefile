@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/18 18:13:01 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/19 18:13:38 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIBFT		:= $(LIBFT_DIR)/libft.a
 LDFLAGS		:= -L$(LIBFT_DIR)
 LDLIBS		:= -lft
 
-SRCS		:= push_swap.c\
+SRCS		:= push_swap.c \
 		   src/parse_options.c
 
 OBJS_DIR	:= objs

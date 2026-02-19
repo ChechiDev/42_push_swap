@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 18:07:04 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/18 18:13:52 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/19 18:06:41 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ SRC_DIR     := src
 OBJ_DIR     := objs
 INC_HDR     := include/libft.h
 
-SRCS        := \
-	$(SRC_DIR)/ft_strncmp.c
+SRCS        := $(SRC_DIR)/ft_strcmp.c \
+	       $(SRC_DIR)/ft_lstnew.c
 
 OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
@@ -46,7 +46,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	@echo "\nLIBFT FULL CLEANED\n
+	@echo "\nLIBFT FULL CLEANED\n"
 
 re: fclean all
 

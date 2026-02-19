@@ -6,13 +6,11 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:50:46 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/18 18:17:12 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/19 17:47:53 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
-
-
 
 int	main(int argc,  char **argv)
 {
@@ -21,16 +19,15 @@ int	main(int argc,  char **argv)
 	t_options	*options;
 	t_stacks	s;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	options = NULL;
+	(void)stack_a = NULL;
+	(void)stack_b = NULL;
+	(void)options = NULL;
 
-	if (argc == 1)
+	if (argc <= 1)
+		printf("Usage: %s --<flag> <Arg1> <Arg2> ... <ArgN>", argv[0]);
 		return (0);
-	else if (argc >=2)
-	{
-
-	}
-
+	options = (t_options *)malloc(sizeof(t_options));
+	if (!options)
+		return (ft_putstr_fd("Error\n", 2), 1);
 	return (0);
 }
