@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/19 18:13:38 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/20 12:47:16 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,12 @@ CC		:= cc
 CFLAGS		:= -Wall -Wextra -Werror
 CPPFLAGS	:= -I./include -I./libft/include
 
+SRC_DIR     	:= src
+CHECK_DIR	:= $(SRC_DIR)/check
+PARSE_DIR	:= $(SRC_DIR)/parse
+MOV_DIR		:= $(SRC_DIR)/movement
+ALGO_DIR	:= $(SRC_DIR)/algorithm
+
 LIBFT_DIR	:= ./libft
 LIBFT		:= $(LIBFT_DIR)/libft.a
 
@@ -24,7 +30,7 @@ LDFLAGS		:= -L$(LIBFT_DIR)
 LDLIBS		:= -lft
 
 SRCS		:= push_swap.c \
-		   src/parse_options.c
+		   $(SRC_DIR)/parse_options.c
 
 OBJS_DIR	:= objs
 OBJS		:= $(SRCS:srcs/%.c=$(OBJS_DIR)/%.o)

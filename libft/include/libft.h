@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/20 11:59:35 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/20 12:35:03 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int		ft_strcmp(char *s1, char *s2);
 t_list	*ft_lstnew(long content);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
