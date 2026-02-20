@@ -6,3 +6,4 @@ test*
 *.a
 main*
 *.txt
+.DS_Store
