@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 18:07:04 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/19 18:06:41 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/20 11:35:31 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ OBJ_DIR     := objs
 INC_HDR     := include/libft.h
 
 SRCS        := $(SRC_DIR)/ft_strcmp.c \
-	       $(SRC_DIR)/ft_lstnew.c
+	       $(SRC_DIR)/ft_lstnew.c \
+	       $(SRC_DIR)/ft_putchar_fd.c \
+	       $(SRC_DIR)/ft_putnbr_fd.c
 
 OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

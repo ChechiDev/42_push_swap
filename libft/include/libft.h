@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/19 18:41:40 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/20 11:33:04 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <stdio.h>
 # include <ctype.h>
 
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+
 typedef struct s_list
 {
 	long			content;
@@ -26,6 +34,8 @@ typedef struct s_list
 }	t_list;
 
 /* Libft functions */
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr(int n, int fd);
 int		ft_strcmp(char *s1, char *s2);
 
 /* lists */
