@@ -10,12 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_flagtype	switch_option(char	*option)
 {
-	if ((ft_strcmp(option, "simple")) == 0)
+	if ((ft_strcmp(option, "bench")) == 0)
+		return (BENCH);
+	else if ((ft_strcmp(option, "simple")) == 0)
 		return (SIMPLE);
-
+	else if ((ft_strcmp(option, "medium")) == 0)
+		return (MEDIUM);
+	else if ((ft_strcmp(optio, "complex")) == 0)
+		return (COMPLEX);
+	esle if ((ft_strcmp ("adaptative")) == 0)
+		return (ADAPTATIVE);
 	return (UNDEFINED);
 }
