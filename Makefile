@@ -6,41 +6,49 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/20 12:47:16 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/20 13:27:18 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= push_swap
-DEGUB_NAME 	:= dbg_push_swap
+NAME        := push_swap
+DNAME       := dbg_push_swap
 
-CC		:= cc
-CFLAGS		:= -Wall -Wextra -Werror
-CPPFLAGS	:= -I./include -I./libft/include
+CC          := cc
+CFLAGS      := -Wall -Wextra -Werror
+CPPFLAGS    := -I./include -I./libft/include
 
-SRC_DIR     	:= src
-CHECK_DIR	:= $(SRC_DIR)/check
-PARSE_DIR	:= $(SRC_DIR)/parse
-MOV_DIR		:= $(SRC_DIR)/movement
-ALGO_DIR	:= $(SRC_DIR)/algorithm
+SRC_DIR     := src
+CHECK_DIR   := $(SRC_DIR)/check
+PARSE_DIR   := $(SRC_DIR)/parse
+MOV_DIR     := $(SRC_DIR)/movement
+ALGO_DIR    := $(SRC_DIR)/algorithm
+UTILS_DIR   := $(SRC_DIR)/utils
 
-LIBFT_DIR	:= ./libft
-LIBFT		:= $(LIBFT_DIR)/libft.a
+LIBFT_DIR   := ./libft
+LIBFT       := $(LIBFT_DIR)/libft.a
 
-LDFLAGS		:= -L$(LIBFT_DIR)
-LDLIBS		:= -lft
+LDFLAGS     := -L$(LIBFT_DIR)
+LDLIBS      := -lft
 
-SRCS		:= push_swap.c \
-		   $(SRC_DIR)/parse_options.c
+# Sources (root + src/)
+SRCS_ROOT   := push_swap.c
+SRCS_SRC    := $(CHECK_DIR)/check_flags.c \
+	       $(PARSE_DIR)/parse_options.c \
+	       $(UTILS_DIR)/free_stash.c
 
-OBJS_DIR	:= objs
-OBJS		:= $(SRCS:srcs/%.c=$(OBJS_DIR)/%.o)
 
-# Default: release
+SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
+
+OBJS_DIR    := objs
+OBJS_ROOT   := $(SRCS_ROOT:%.c=$(OBJS_DIR)/%.o)
+OBJS_SRC    := $(SRCS_SRC:$(SRC_DIR)/%.c=$(OBJS_DIR)/%.o)
+OBJS        := $(OBJS_ROOT) $(OBJS_SRC)
+
 ifeq ($(DEBUG),1)
-	CFLAGS   += -ggdb3
+	CFLAGS    += -ggdb3
 	BUILD_MSG := Compiling debug:
 else
-	CFLAGS   += -O2
+	CFLAGS    += -O2
 	BUILD_MSG := Compiling:
 endif
 
@@ -50,11 +58,9 @@ $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
 	@echo "\nPUSH_SWAP COMPILED!\n"
 
-# Build libft only when needed (and only if files changed)
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-# Debug build: force DEBUG=1 for this target
 debug: DEBUG=1
 debug: $(DNAME)
 
@@ -62,8 +68,15 @@ $(DNAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
 	@echo "\nPUSH_SWAP DEBUG COMPILED!\n"
 
-$(OBJS_DIR)/%.o: srcs/%.c Makefile include/push_swap.h
-	@mkdir -p $(OBJS_DIR)
+# Compile .c from project root
+$(OBJS_DIR)/%.o: %.c Makefile include/push_swap.h
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	@echo "$(BUILD_MSG) $<"
+
+# Compile .c from src/
+$(OBJS_DIR)/%.o: $(SRC_DIR)/%.c Makefile include/push_swap.h
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 	@echo "$(BUILD_MSG) $<"
 

@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/19 18:59:38 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:12:59 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ typedef enum s_flag_opt
 	BENCH,
 	UNDEFINED
 }	t_flagtype;
+
+typedef struct check_flags
+{
+	int	bench;
+	int	simple;
+	int	medium;
+	int	complex;
+	int	adaptative;
+}	t_flags;
 
 typedef struct s_options
 {
