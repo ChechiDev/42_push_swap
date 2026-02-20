@@ -6,11 +6,11 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 11:47:32 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/20 11:59:28 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:31:48 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
