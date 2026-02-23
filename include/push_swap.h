@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/20 14:12:59 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/23 16:08:34 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include "../libft/include/libft.h"
+# include "libft.h"
 
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
@@ -35,7 +35,7 @@ typedef enum s_flag_opt
 	ADAPTIVE,
 	BENCH,
 	UNDEFINED
-}	t_flagtype;
+}	t_flag_opt;
 
 typedef struct check_flags
 {
@@ -43,12 +43,12 @@ typedef struct check_flags
 	int	simple;
 	int	medium;
 	int	complex;
-	int	adaptative;
+	int	adaptive;
 }	t_flags;
 
 typedef struct s_options
 {
-	t_flagtype	*options;
+	t_flag_opt	*options;
 	int			count;
 }	t_options;
 
@@ -60,9 +60,36 @@ typedef struct s_stacks
 	int		end;
 }	t_stacks;
 
+typedef struct s_stats
+{
+	size_t			ra_count;
+	size_t			rb_count;
+	size_t			rr_count;
+	size_t			rra_count;
+	size_t			rrb_count;
+	size_t			rrr_count;
+	size_t			pa_count;
+	size_t			pb_count;
+	size_t			sa_count;
+	size_t			sb_count;
+	size_t			ss_count;
+	size_t			total_count;
+	size_t			sizea;
+	t_flag_opt		algo;
+	int				isbench;
+	int				isadaptive;
+	float			di;
+}	t_stats;
+
+/* Check */
+int		check_options(t_options **options);
+
 /* Parse */
+int		parse_options(int argc, char **argv, t_options **options);
+int		get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm);
+int		select_option(t_flag_opt *opt, t_stats *st, t_options *o);
+
 /* Functions */
 void	free_stash(char **stash);
-
 
 #endif 

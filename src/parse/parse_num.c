@@ -1,11 +1,11 @@
-#include "../includes/libft.h"
+#include "libft.h"
 
 static int	is_nbr(char *s)
 {
 	int	j;
 
 	j = 0;
-	while (s[j] == 32 || (s[j] >= 9 && s[j] <= 13)
+	while (s[j] == 32 || (s[j] >= 9 && s[j] <= 13))
 		j++;
 	if (s[j] == '-' || s[j] == '+')
 		j++;

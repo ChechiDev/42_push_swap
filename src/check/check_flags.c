@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:39:17 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/20 14:08:01 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/23 13:51:50 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	check_flags(int argc, char **argv, t_flags flags)
 			flags.medium = 1;
 		else if (ft_strcmp(argv[i], "--complex") == 0 && !flags.complex && !f)
 			flags.complex = 1;
-		else if (ft_strcmp(argv[i], "--adaptative") == 0 && !flags.adaptative && !f)
-			flags.adaptative = 1;
+		else if (ft_strcmp(argv[i], "--adaptive") == 0 && !flags.adaptive && !f)
+			flags.adaptive = 1;
 		else
 			return (-1);
 		if (ft_strcmp(argv[i], "--bench") != 0)
