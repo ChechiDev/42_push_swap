@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/20 13:27:18 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/23 18:26:20 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,14 @@ LDLIBS      := -lft
 
 # Sources (root + src/)
 SRCS_ROOT   := push_swap.c
-SRCS_SRC    := $(CHECK_DIR)/check_flags.c \
+SRCS_SRC    := $(CHECK_DIR)/check_first.c \
+	       $(CHECK_DIR)/check_flags.c \
+	       $(CHECK_DIR)/check_options.c \
+	       $(PARSE_DIR)/parse_num.c \
+	       $(PARSE_DIR)/parse_params.c \
 	       $(PARSE_DIR)/parse_options.c \
+	       $(PARSE_DIR)/parse_disorder_index.c \
+	       $(UTILS_DIR)/add_node.c \
 	       $(UTILS_DIR)/free_stash.c
 
 

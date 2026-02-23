@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   parse_disorder_index.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 15:50:46 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 18:25:15 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/23 18:24:50 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/23 18:26:56 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
-int main(int argc, char **argv)
+float	parse_disorder_index(int n, t_list *stack_a)
 {
-	t_list		*stack_a = NULL;
-	t_list		*stack_b = NULL;
-	t_options	*options = NULL;
-	t_stacks	stack;
+	t_list	*tmp;
+	float	even_total;
+	float	errors;
+	float	index;
 
-	(void)stack_a;
-	(void)stack_b;
-	(void)options;
-	(void)stack;
-	(void)argc;
-	(void)argv;
-
-	return (0);
+	if (n == 1)
+		return (0);
+	even_total = (n * (n - 1)) / 2;
+	errors = 0;
+	while (stack_a && stack_a->next)
+	{
+		tmp = stack_a->next;
+		while (tmp)
+		{
+			if (stack_a->content > tmp->content)
+				errors++;
+			tmp = tmp->next;
+		}
+		stack_a = stack_a->next;
+	}
+	index = (errors * 100) / even_total;
+	return (index);
 }

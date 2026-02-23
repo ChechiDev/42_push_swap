@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   check_first.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 11:47:32 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 18:58:12 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/23 17:18:47 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/23 17:34:18 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	check_first(int argc, char argv, t_stacks stack)
 {
-	int	count;
-
-	count = 0;
-	while (lst != NULL)
+	if (argc == 1)
 	{
-		count++;
-		lst = lst->next;
+		write(1, "Error\n", 5);
+		return (0);
 	}
-	return (count);
+	else if (argc == 2)
+	{
+		if (!parse_options())
+		{
+		}
+	}
 }

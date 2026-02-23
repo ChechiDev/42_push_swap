@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 16:08:34 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/23 18:26:48 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,24 @@ typedef struct s_stats
 }	t_stats;
 
 /* Check */
+
+int		check_first(int argc, char argv, t_stacks stack);
+int		check_flags(int argc, char **argv, t_flags flags);
 int		check_options(t_options **options);
+int		check_minmax(char **argv);
+int		check_num(char **argv);
+int		check_duplicates(char **argv);
 
 /* Parse */
 int		parse_options(int argc, char **argv, t_options **options);
 int		get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm);
 int		select_option(t_flag_opt *opt, t_stats *st, t_options *o);
+int		parse_params(int argc, char **argv, t_list **stack_a);
+int		parse_num(char **av);
+float	parse_disorder_index(int n, t_list *stack_a);
 
-/* Functions */
+/* Utils */
+int		add_node(char *argv, t_list **stack_a);
 void	free_stash(char **stash);
 
 #endif 

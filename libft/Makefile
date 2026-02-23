@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 18:07:04 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/20 14:21:24 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/23 17:53:13 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS        := $(SRC_DIR)/ft_strcmp.c \
                $(SRC_DIR)/ft_putnbr_fd.c \
                $(SRC_DIR)/ft_lstnew.c \
                $(SRC_DIR)/ft_lstadd_back.c \
+               $(SRC_DIR)/ft_atol.c \
                $(SRC_DIR)/ft_lstlast.c \
                $(SRC_DIR)/ft_lstsize.c
 
