@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   add_node.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 11:47:32 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 18:58:12 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/23 17:46:15 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/23 17:48:10 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	add_node(char *argv, t_list **stack_a)
 {
-	int	count;
+	t_list	*node;
 
-	count = 0;
-	while (lst != NULL)
-	{
-		count++;
-		lst = lst->next;
-	}
-	return (count);
+	node = ft_lstnew(ft_atol(argv));
+	if (!node)
+		return (0);
+	ft_lstadd_back(stack_a, node);
+	return (1);
 }
