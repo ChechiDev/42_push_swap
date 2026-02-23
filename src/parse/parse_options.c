@@ -6,13 +6,13 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:35:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/20 13:18:31 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/23 16:11:43 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
-t_opttype	switch_option(char	*opt_str)
+t_flag_opt	switch_option(char *opt_str)
 {
 	if ((ft_strcmp(opt_str, "bench")) == 0)
 		return (BENCH);
@@ -22,33 +22,84 @@ t_opttype	switch_option(char	*opt_str)
 		return (MEDIUM);
 	else if ((ft_strcmp(opt_str, "complex")) == 0)
 		return (COMPLEX);
-	esle if ((ft_strcmp (opt_str, "adaptative")) == 0)
-		return (ADAPTATIVE);
+	else if ((ft_strcmp (opt_str, "adaptive")) == 0)
+		return (ADAPTIVE);
 	return (UNDEFINED);
 }
 
-
-int	parse_options(int ac, char **av, t_opttype **options)
+int	get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm)
 {
-	t_opttype	alg;
-	int	bench;
-	int	error;
+	int			i;
+	t_flag_opt	opt;
 
-	alg = UNDEFINED;
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strcmp(argv[i], "--bench") == 0)
+		{
+			if (*bench)
+				return (3);
+			*bench = 1;
+		}
+		else if (argv[i][0] == '-' && argv[i][1] == '-')
+		{
+			opt = switch_option(&argv[i][2]);
+			if (opt != UNDEFINED && opt != BENCH)
+			{
+				if (*algorithm != UNDEFINED && *algorithm != opt)
+					return (3);
+				*algorithm = opt;
+			}
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	select_option(t_flag_opt *opt, t_stats *st, t_options *o)
+{
+	if (o->count == 2)
+	{
+		st->isbench = 1;
+		if (o->options[0] != BENCH)
+			*opt = o->options[0];
+		else
+			*opt = o->options[1];
+	}
+	else if (o->count == 1)
+	{
+		if (o->options[0] == BENCH)
+		{
+			st->isbench = 1;
+			st->isadaptive = 1;
+		}
+		else
+			*opt = o->options[0];
+	}
+	return (1);
+}
+
+int	parse_options(int argc, char **argv, t_options **options)
+{
+	t_flag_opt	algorithm;
+	int			bench;
+	int			error;
+
+	algorithm = UNDEFINED;
 	bench = 0;
-	*options = malloc(sizeof(t_opttype);
+	*options = malloc(sizeof(t_flag_opt));
 	if (!*options)
 		return (0);
 	(*options)->count = 0;
-	(*options)->options = malloc(2 * sizeof(t_opttype));
+	(*options)->options = malloc(2 * sizeof(t_flag_opt));
 	if (!(*options)->options)
 		return (free(*options), 0);
-	>>>ERROR FUNCION<<<(ac, av, bench, alg); // nombre de función a definir
+	error = get_argv_opt(argc, argv, &bench, &algorithm);
 	if (error)
 		return (error);
 	if (bench == 1)
 		(*options)->options[(*options)->count++] = BENCH;
-	if (alg != UNDEFINED)
-		(*options)->options[(*options)->count++] = alg;
+	if (algorithm != UNDEFINED)
+		(*options)->options[(*options)->count++] = algorithm;
 	return ((*options)->count);
 }
