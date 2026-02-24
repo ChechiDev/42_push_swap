@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:50:46 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 18:25:15 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:35:27 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 int main(int argc, char **argv)
 {
-	t_list		*stack_a = NULL;
-	t_list		*stack_b = NULL;
-	t_options	*options = NULL;
+	t_list		*stack_a;
+	t_list		*stack_b;
+	t_options	*options;
 	t_stacks	stack;
 
-	(void)stack_a;
-	(void)stack_b;
-	(void)options;
-	(void)stack;
-	(void)argc;
-	(void)argv;
-
+	options = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
+	stack.stack_a = &stack_a;
+	stack.stack_b = &stack_b;
+	if (!check_first(argc, argv, stack))
+		return (0);
+	parse_options(argc, argv, &options);
 	return (0);
 }
