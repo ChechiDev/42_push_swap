@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 18:04:40 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 19:29:18 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/24 13:33:08 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_minmax(char **argv)
 	}
 	return (1);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	int		arg_count;
@@ -56,3 +56,4 @@ int	main(int argc, char **argv)
 
 	return (0);
 }
+*/
