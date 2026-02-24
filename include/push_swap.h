@@ -104,4 +104,8 @@ void	free_all(t_list **stack_a, t_list **stack_b, t_options **options);
 /* Utils */
 int		add_node(char *argv, t_list **stack_a);
 
+/* Movements */
+void			pb(t_list **stack_a, t_list **stack_b);
+void			pa(t_list **stack_a, t_list **stack_b);
+
 #endif 
