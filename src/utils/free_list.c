@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stash.c                                       :+:      :+:    :+:   */
+/*   free_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
+/*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 15:26:57 by javisan2          #+#    #+#             */
-/*   Updated: 2026/02/19 18:59:00 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/24 12:37:53 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/24 12:43:05 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
-void	free_stash(char **stash)
+void	free_list(t_list *stack_a)
 {
-	if (stash && *stash)
+	t_list	*tmp;
+	
+	if (!stack_a)
+		return ;
+	while (stack_a)
 	{
-		free (*stash);
-		*stash = NULL;
+		tmp = stack_a->next;
+		free(stack_a);
+		stack_a = tmp;
 	}
 }
