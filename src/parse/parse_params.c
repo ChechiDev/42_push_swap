@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 17:36:49 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 18:37:06 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:54:20 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	parse_params(int argc, char **argv, t_list **stack_a)
 
 	flags = (t_flags){0};
 	*stack_a = NULL;
-	i = (check_flags(argc, argv, flags));
+	i = check_flags(argc, argv, flags);
 	if (i == -1 || i > 3)
 		return (write(2, "Error\n", 6), 0);
 	if (!check_num(argv + i) || !check_minmax(argv + i))
