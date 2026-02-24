@@ -10,7 +10,7 @@ void	ra(t_list **stack_a)
 	first = *stack_a;
 	*stack_a = first->next;
 	first->next = NULL;
-	last = ???; /// función?
+	last = ft_lstlast(*stack_a);
 	last->next = first;
 	write (1, "ra\n", 3);
 }
@@ -25,7 +25,7 @@ void	rb(t_list **stack_b)
 	first = *stack_b;
 	*stack_b = first->next;
 	first->next = NULL;
-	last = ??? /// función?
+	last = ft_lstlast(*stack_b);
 	last->next = first;
 	write (1, "rb\n", 3);
 }
