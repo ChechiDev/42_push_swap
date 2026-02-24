@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:35:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 16:11:43 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:40:15 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	parse_options(int argc, char **argv, t_options **options)
 
 	algorithm = UNDEFINED;
 	bench = 0;
-	*options = malloc(sizeof(t_flag_opt));
+	*options = malloc(sizeof(t_options));
 	if (!*options)
 		return (0);
 	(*options)->count = 0;
