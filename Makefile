@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/23 18:26:20 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/24 13:30:46 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,16 @@ SRCS_ROOT   := push_swap.c
 SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(CHECK_DIR)/check_flags.c \
 	       $(CHECK_DIR)/check_options.c \
+	       $(CHECK_DIR)/check_duplicates.c \
+	       $(CHECK_DIR)/check_minmax.c \
+	       $(CHECK_DIR)/check_num.c \
 	       $(PARSE_DIR)/parse_num.c \
 	       $(PARSE_DIR)/parse_params.c \
 	       $(PARSE_DIR)/parse_options.c \
 	       $(PARSE_DIR)/parse_disorder_index.c \
-	       $(UTILS_DIR)/add_node.c \
-	       $(UTILS_DIR)/free_stash.c
-
+	       $(UTILS_DIR)/free_list.c \
+	       $(UTILS_DIR)/free_all.c \
+	       $(UTILS_DIR)/add_node.c
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
 
