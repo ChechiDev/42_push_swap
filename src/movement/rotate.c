@@ -5,7 +5,7 @@ void	ra(t_list **stack_a)
 	t_list	*first;
 	t_list	*last;
 
-	if (!stack_a || !*stack_a)
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
 		return ;
 	first = *stack_a;
 	*stack_a = first->next;
@@ -20,7 +20,7 @@ void	rb(t_list **stack_b)
 	t_list	*first;
 	t_list	*last;
 
-	if (!stack_b || !*stack_b)
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
 	first = *stack_b;
 	*stack_b = first->next;
