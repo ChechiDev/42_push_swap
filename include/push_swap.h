@@ -117,4 +117,7 @@ void		rra(t_list **stack_a);
 void		rrb(t_list **stack_b);
 void		rrr(t_list **stack_a, t_list **stack_b);
 
+/* Algorithm */
+double		disorder_meter(t_list *stack_a);
+
 #endif
