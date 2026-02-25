@@ -30,7 +30,7 @@ int	parse_num(char **av)
 	while (av[i])
 	{
 		if (is_nbr(av[i]) == 0)
-			return (0)
+			return (0);
 		nbrs++;
 		i++;
 	}
