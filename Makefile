@@ -48,7 +48,8 @@ SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(MOV_DIR)/reverse_rotate.c \
 	       $(UTILS_DIR)/free_list.c \
 	       $(UTILS_DIR)/free_all.c \
-	       $(UTILS_DIR)/add_node.c
+	       $(UTILS_DIR)/add_node.c \
+	       $(ALGO_DIR)/disorder.c 
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
 
