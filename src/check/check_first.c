@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 17:18:47 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/24 11:56:20 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/24 17:21:17 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_first(int argc, char **argv, t_stacks stack)
 		return (0);
 	else if (argc == 2)
 	{
-		if (!parse_options(argc, argv, stack.stack_a))
+		if (!parse_params(argc, argv, stack.stack_a))
 			return (0);
 	}
 	return (1);
