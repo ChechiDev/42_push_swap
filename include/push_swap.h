@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/24 19:13:43 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/25 17:49:34 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef struct s_stats
 
 /* Check */
 int		check_first(int argc, char **argv, t_stacks stack);
-int		check_flags(int argc, char **argv, t_flags flags);
+int		check_flags(int argc, char **argv, t_flags *flags);
 int		check_options(t_options **options);
 int		check_minmax(char **argv);
 int		check_num(char **argv);
