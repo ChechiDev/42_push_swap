@@ -105,7 +105,11 @@ void	free_all(t_list **stack_a, t_list **stack_b, t_options **options);
 int		add_node(char *argv, t_list **stack_a);
 
 /* Movements */
-void			pb(t_list **stack_a, t_list **stack_b);
-void			pa(t_list **stack_a, t_list **stack_b);
+void		pb(t_list **stack_a, t_list **stack_b);
+void		pa(t_list **stack_a, t_list **stack_b);
+void		ra(t_list **stack_a);
+void		rb(t_list **stack_b);
+void		rr(t_list **stack_a, t_list **stack_b);
+
 
 #endif 
