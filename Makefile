@@ -42,6 +42,8 @@ SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(PARSE_DIR)/parse_params.c \
 	       $(PARSE_DIR)/parse_options.c \
 	       $(PARSE_DIR)/parse_disorder_index.c \
+	       $(MOV_DIR)/push.c \
+	       $(MOV_DIR)/rotate.c \
 	       $(UTILS_DIR)/free_list.c \
 	       $(UTILS_DIR)/free_all.c \
 	       $(UTILS_DIR)/add_node.c
