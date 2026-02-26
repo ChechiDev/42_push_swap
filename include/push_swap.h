@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 15:23:28 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 16:57:48 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,9 @@ void	free_all(t_list **stack_a, t_list **stack_b, t_options **options);
 
 /* Utils */
 int		add_node(char *argv, t_list **stack_a);
+
+/* Print */
+void	print_stack(t_list *stack, char *label);
 
 /* Movements */
 void	pb(t_list **stack_a, t_list **stack_b);

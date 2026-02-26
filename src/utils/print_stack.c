@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 11:23:44 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 17:24:29 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/02/26 16:47:20 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/02/26 17:15:17 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static void	print_label(char *label)
 {
-	long	nb;
-
-	nb = (long)n;
-	if (nb < 0)
+	ft_putchar_fd('[', 2);
+	while (*label)
 	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
+		ft_putchar_fd(*label, 2);
+		label++;
 	}
-	if (nb >= 10)
-		ft_putnbr_fd((int)(nb / 10), fd);
-	ft_putchar_fd((char)(nb % 10) + '0', fd);
+	ft_putchar_fd(']', 2);
+}
+
+void	print_stack(t_list *stack, char *label)
+{
+	print_label(label);
+	while (stack)
+	{
+		ft_putchar_fd(' ', 2);
+		ft_putnbr_fd((int)stack->content, 2);
+		stack = stack->next;
+	}
+	ft_putchar_fd('\n', 2);
 }
