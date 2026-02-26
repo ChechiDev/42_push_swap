@@ -6,11 +6,11 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:47:20 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 16:48:32 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 16:52:30 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 static void	print_label(char *label)
 {
