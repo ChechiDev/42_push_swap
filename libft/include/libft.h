@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 15:47:09 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:13:06 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,14 @@ typedef struct s_list
 
 /* Libft functions */
 void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);
 int		ft_strcmp(char *s1, char *s2);
 
 /* lists */
-t_list	*ft_lstnew(long content);
-int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstnew(long content);
 t_list	*ft_lstlast(t_list *lst);
+int		ft_lstsize(t_list *lst);
 long	ft_atol(char *argv_char);
-
 
 #endif

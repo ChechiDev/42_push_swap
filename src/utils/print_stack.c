@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:47:20 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 16:52:30 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:15:17 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	print_stack(t_list *stack, char *label)
 	while (stack)
 	{
 		ft_putchar_fd(' ', 2);
-		ft_putnbr(stack->content, 2);
+		ft_putnbr_fd((int)stack->content, 2);
 		stack = stack->next;
 	}
 	ft_putchar_fd('\n', 2);
