@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 12:55:25 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 15:23:28 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include <stdbool.h>
 # include "libft.h"
 
