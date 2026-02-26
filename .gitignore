@@ -1,7 +1,6 @@
 *.out
 *.swp
 *.o
-test*
 *.h.gch
 *.a
 main*
