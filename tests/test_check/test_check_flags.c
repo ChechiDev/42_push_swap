@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 16:29:59 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/25 19:01:43 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 16:33:43 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(int argc, char **argv)
 {
-	t_flags	flags
+	t_flags	flags;
 	int		result;
 
 	flags = (t_flags){0};
