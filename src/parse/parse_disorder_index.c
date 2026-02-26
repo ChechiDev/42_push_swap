@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 18:24:50 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/23 18:26:56 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:55:21 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ float	parse_disorder_index(int n, t_list *stack_a)
 		}
 		stack_a = stack_a->next;
 	}
-	index = (errors * 100) / even_total;
+	index = (errors) / even_total;
 	return (index);
 }
