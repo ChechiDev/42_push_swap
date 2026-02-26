@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/25 17:49:34 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:55:25 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ int		parse_options(int argc, char **argv, t_options **options);
 int		get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm);
 int		select_option(t_flag_opt *opt, t_stats *st, t_options *o);
 int		parse_params(int argc, char **argv, t_list **stack_a);
-int		parse_num(char **argv);
 float	parse_disorder_index(int n, t_list *stack_a);
 
 /* Free */
@@ -105,17 +104,17 @@ void	free_all(t_list **stack_a, t_list **stack_b, t_options **options);
 int		add_node(char *argv, t_list **stack_a);
 
 /* Movements */
-void		pb(t_list **stack_a, t_list **stack_b);
-void		pa(t_list **stack_a, t_list **stack_b);
-void		ra(t_list **stack_a);
-void		rb(t_list **stack_b);
-void		rr(t_list **stack_a, t_list **stack_b);
-void		sa(t_list **stack_a);
-void		sb(t_list **stack_b);
-void		ss(t_list **stack_a, t_list **stack_b);
-void		rra(t_list **stack_a);
-void		rrb(t_list **stack_b);
-void		rrr(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	rra(t_list **stack_a);
+void	rrb(t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* Algorithm */
 double		disorder_meter(t_list *stack_a);
