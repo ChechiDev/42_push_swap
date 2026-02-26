@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:57:17 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 16:57:30 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:52:21 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 	c = (t_list){1, NULL};
 	b = (t_list){2, &c};
 	a = (t_list){3, &b};
+	print_stack(&a, "stack_a");
 	printf("\n-- Stack con 1 elemento --\n");
 	printf("esperado: [stack_b] 42\n");
 	a = (t_list){42, NULL};
