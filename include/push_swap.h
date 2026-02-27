@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 16:57:48 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/27 11:13:13 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ int		check_duplicates(char **argv);
 
 /* Parse */
 int		parse_options(int argc, char **argv, t_options **options);
-int		get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm);
-int		select_option(t_flag_opt *opt, t_stats *st, t_options *o);
 int		parse_params(int argc, char **argv, t_list **stack_a);
 float	parse_disorder_index(int n, t_list *stack_a);
 
@@ -103,6 +101,8 @@ void	free_all(t_list **stack_a, t_list **stack_b, t_options **options);
 
 /* Utils */
 int		add_node(char *argv, t_list **stack_a);
+int		get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm);
+int		get_option(t_flag_opt *opt, t_stats *st, t_options *o);
 
 /* Print */
 void	print_stack(t_list *stack, char *label);
