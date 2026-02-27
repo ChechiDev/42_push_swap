@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/27 10:10:22 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/27 10:28:18 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include <string.h>
 # include <ctype.h>
 
 # ifndef INT_MAX
