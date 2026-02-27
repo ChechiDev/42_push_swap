@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/24 13:30:46 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/02/27 09:45:52 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(CHECK_DIR)/check_duplicates.c \
 	       $(CHECK_DIR)/check_minmax.c \
 	       $(CHECK_DIR)/check_num.c \
-	       $(PARSE_DIR)/parse_num.c \
 	       $(PARSE_DIR)/parse_params.c \
 	       $(PARSE_DIR)/parse_options.c \
 	       $(PARSE_DIR)/parse_disorder_index.c \

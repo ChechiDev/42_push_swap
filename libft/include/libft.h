@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 17:47:35 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 17:13:06 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/02/27 10:10:22 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_list
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_strcmp(char *s1, char *s2);
+void	ft_bzero(void *p, size_t i);
+char	**ft_split(char const *s, char c);
 
 /* lists */
 void	ft_lstadd_back(t_list **lst, t_list *new);
