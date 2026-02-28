@@ -122,5 +122,8 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* Algorithm */
 double		disorder_meter(t_list *stack_a);
+void		simple(t_list **stack_a, t_list **stack_b);
+void		last_three(t_list **stack_a, t_list **stack_b);
+void		sort_3(t_list **stack_a);
 
 #endif
