@@ -1,3 +1,13 @@
+/*
+ra (rotate a): Desplaza hacia arriba todos los elementos del stack
+a una posición, convirtiendo el primer elemento en el último.
+
+rb (rotate b): Desplaza hacia arriba todos los elementos del stack
+b una posición, convirtiendo el primer elemento en el último.
+
+rr :ra y rb a la vez.
+*/
+
 #include "push_swap.h"
 
 void	ra(t_list **stack_a)
