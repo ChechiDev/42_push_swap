@@ -133,6 +133,7 @@ int		get_top_pos(t_list *stack_a, long *arr, int start, int end);
 int		get_bottom_pos(t_list *stack_a, long *arr, int start, int end);
 void	push_to_a(t_stacks s);
 int		get_max_pos(t_list *stack_b);
+
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
 void	set_adaptive(t_stacks stack, t_options **options);
 
