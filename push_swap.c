@@ -6,28 +6,30 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:50:46 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/27 09:58:40 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 18:34:13 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list		*stack_a;
 	t_list		*stack_b;
 	t_options	*options;
 	t_stacks	stack;
 
-	options = NULL;
 	stack_a = NULL;
 	stack_b = NULL;
 	stack.stack_a = &stack_a;
 	stack.stack_b = &stack_b;
+	options = NULL;
 	if (!check_first(argc, argv, stack))
 		return (0);
-	parse_options(argc, argv, &options);
+	if (parse_options(argc, argv, &options) < 0)
+		return (free_all(&stack_a, &stack_b, &options), 1);
+	set_adaptive(stack, &options);
 	free_all(&stack_a, &stack_b, &options);
 	return (0);
 }

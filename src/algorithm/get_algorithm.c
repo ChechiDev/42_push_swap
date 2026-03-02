@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_disorder_index.c                             :+:      :+:    :+:   */
+/*   get_algorithm.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/23 18:24:50 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 18:45:41 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/03/02 16:15:27 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/03/02 19:17:29 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	parse_disorder_index(int n, t_list *stack_a)
+void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
 {
-	t_list	*tmp;
-	float	even_total;
-	float	errors;
-	float	index;
-
-	if (n == 1)
-		return (0);
-	even_total = (float)(n * (n - 1)) / 2.0f;
-	errors = 0;
-	while (stack_a && stack_a->next)
+	if (opt == UNDEFINED || opt == ADAPTIVE)
 	{
-		tmp = stack_a->next;
-		while (tmp)
-		{
-			if (stack_a->content > tmp->content)
-				errors++;
-			tmp = tmp->next;
-		}
-		stack_a = stack_a->next;
+		(*stats)->isadaptive = 1;
+		if ((*stats)->dis_index == 0)
+			opt = UNDEFINED;
+		else if ((*stats)->dis_index < 20)
+			opt = SIMPLE;
+		else if ((*stats)->dis_index < 50)
+			opt = MEDIUM;
+		else if ((*stats)->dis_index >= 50)
+			opt = COMPLEX;
 	}
-	index = (errors / even_total) * 100.0f;
-	return (index);
+	if (opt == SIMPLE)
+		set_simple(stack, stats);
+	return ;
 }
