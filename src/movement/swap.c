@@ -1,3 +1,15 @@
+/*
+sa (swap a):
+Intercambia los dos primeros elementos del stack a.
+No hace nada si hay solo uno o ningún elemento.
+
+sb (swap b):
+Intercambia los dos primeros elementos del stack b.
+No hace nada si hay solo uno o ningún elemento.
+
+ss :saysbalavez.
+*/
+
 #include "push_swap.h"
 /*
 #include <stdio.h>

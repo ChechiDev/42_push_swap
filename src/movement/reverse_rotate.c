@@ -1,3 +1,15 @@
+/*
+rra (reverse rotate a):
+Desplaza hacia abajo todos los elementos del stack a una
+posición, convirtiendo el último elemento en el primero.
+
+rrb (reverse rotate b):
+Desplaza hacia abajo todos los elementos del stack b una
+posición, convirtiendo el último elemento en el primero.
+
+rrr :rrayrrbalavez.
+*/
+
 #include "push_swap.h"
 
 void	rra(t_list **stack_a)
