@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 18:20:27 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 18:32:07 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int		parse_params(int argc, char **argv, t_list **stack_a);
 float	parse_disorder_index(int n, t_list *stack_a);
 
 /* Algorithm */
-void	get_algorithm(t_optype opt, t_stacks stack, t_stats **stats);
+void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
 void	set_adaptive(t_stacks stack, t_options **options);
 
 /* Free */
