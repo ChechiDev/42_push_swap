@@ -51,7 +51,9 @@ SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(UTILS_DIR)/get_argv_opt.c \
 	       $(UTILS_DIR)/get_option.c \
 	       $(ALGO_DIR)/simple.c \
-	       $(ALGO_DIR)/disorder.c 
+	       $(ALGO_DIR)/disorder.c \
+	       $(ALGO_DIR)/medium.c \
+	       $(ALGO_DIR)/medium_chunks.c
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
 

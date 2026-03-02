@@ -33,7 +33,11 @@ SRCS        := $(SRC_DIR)/ft_strcmp.c \
                $(SRC_DIR)/ft_lstnew.c \
                $(SRC_DIR)/ft_lstadd_back.c \
                $(SRC_DIR)/ft_lstlast.c \
-               $(SRC_DIR)/ft_lstsize.c
+               $(SRC_DIR)/ft_lstsize.c \
+               $(SRC_DIR)/ft_array_sort.c \
+               $(SRC_DIR)/ft_bubblesort.c \
+               $(SRC_DIR)/ft_putnbr.c \
+               $(SRC_DIR)/ft_strlen.c
 
 OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
