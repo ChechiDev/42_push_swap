@@ -4,6 +4,7 @@ RETURN:
 Número de inversiones / número total de pares posibles
 */
 
+#include "libft.h"
 #include "push_swap.h"
 
 double	disorder_meter(t_list *stack_a)
@@ -22,7 +23,7 @@ double	disorder_meter(t_list *stack_a)
 		while (j)
 		{
 			total_pairs++;
-			if (i->value > j->value)
+			if (i->content > j->content)
 				wrong_pairs++;
 			j = j->next;
 		}

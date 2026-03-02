@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/27 11:13:13 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 17:20:41 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ typedef struct check_flags
 	int	adaptive;
 }	t_flags;
 
+typedef struct s_list
+{
+	long			content;
+	struct s_list	*next;
+}	t_list;
+
 typedef struct s_options
 {
 	t_flag_opt	*options;
@@ -75,11 +81,11 @@ typedef struct s_stats
 	size_t			sb_count;
 	size_t			ss_count;
 	size_t			total_count;
-	size_t			sizea;
-	t_flag_opt		algo;
+	size_t			size_a;
+	t_flag_opt		algorithm;
 	int				isbench;
 	int				isadaptive;
-	float			di;
+	float			dis_index;
 }	t_stats;
 
 /* Check */
@@ -94,6 +100,10 @@ int		check_duplicates(char **argv);
 int		parse_options(int argc, char **argv, t_options **options);
 int		parse_params(int argc, char **argv, t_list **stack_a);
 float	parse_disorder_index(int n, t_list *stack_a);
+
+/* Algorithm */
+void	get_algorithm(t_optype opt, t_stacks stack, t_stats **stats);
+void	set_adaptive(t_stacks stack, t_options **options);
 
 /* Free */
 void	free_list(t_list *stack_a);
