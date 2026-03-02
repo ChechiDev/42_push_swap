@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 17:20:41 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 18:20:27 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,6 @@ typedef struct check_flags
 	int	complex;
 	int	adaptive;
 }	t_flags;
-
-typedef struct s_list
-{
-	long			content;
-	struct s_list	*next;
-}	t_list;
 
 typedef struct s_options
 {
