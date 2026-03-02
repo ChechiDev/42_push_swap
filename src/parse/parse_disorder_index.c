@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 18:24:50 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 17:55:21 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 18:45:41 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ float	parse_disorder_index(int n, t_list *stack_a)
 
 	if (n == 1)
 		return (0);
-	even_total = (n * (n - 1)) / 2;
+	even_total = (float)(n * (n - 1)) / 2.0f;
 	errors = 0;
 	while (stack_a && stack_a->next)
 	{
@@ -34,6 +34,6 @@ float	parse_disorder_index(int n, t_list *stack_a)
 		}
 		stack_a = stack_a->next;
 	}
-	index = (errors) / even_total;
+	index = (errors / even_total) * 100.0f;
 	return (index);
 }

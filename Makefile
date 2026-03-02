@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/27 11:13:50 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/03/02 19:00:57 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CHECK_DIR   := $(SRC_DIR)/check
 PARSE_DIR   := $(SRC_DIR)/parse
 MOV_DIR     := $(SRC_DIR)/movement
 ALGO_DIR    := $(SRC_DIR)/algorithm
+BENCH_DIR   := $(SRC_DIR)/bench
 UTILS_DIR   := $(SRC_DIR)/utils
 
 LIBFT_DIR   := ./libft
@@ -50,7 +51,10 @@ SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(UTILS_DIR)/add_node.c \
 	       $(UTILS_DIR)/get_argv_opt.c \
 	       $(UTILS_DIR)/get_option.c \
-	       $(ALGO_DIR)/disorder.c 
+	       $(ALGO_DIR)/disorder.c \
+	       $(ALGO_DIR)/get_algorithm.c \
+	       $(ALGO_DIR)/set_algorithm.c \
+	       $(BENCH_DIR)/bench_simple.c
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
 
