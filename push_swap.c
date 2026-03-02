@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 15:50:46 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/27 09:58:40 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 17:13:01 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(int argc, char **argv)
 	if (!check_first(argc, argv, stack))
 		return (0);
 	parse_options(argc, argv, &options);
+	set_adaptive(stack, *options);
 	free_all(&stack_a, &stack_b, &options);
 	return (0);
 }
