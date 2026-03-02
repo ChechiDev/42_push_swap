@@ -51,10 +51,17 @@ SRCS_SRC    := $(CHECK_DIR)/check_first.c \
 	       $(UTILS_DIR)/add_node.c \
 	       $(UTILS_DIR)/get_argv_opt.c \
 	       $(UTILS_DIR)/get_option.c \
+<<<<<<< HEAD
 	       $(ALGO_DIR)/disorder.c \
 	       $(ALGO_DIR)/get_algorithm.c \
 	       $(ALGO_DIR)/set_algorithm.c \
 	       $(BENCH_DIR)/bench_simple.c
+=======
+	       $(ALGO_DIR)/simple.c \
+	       $(ALGO_DIR)/disorder.c \
+	       $(ALGO_DIR)/medium.c \
+	       $(ALGO_DIR)/medium_chunks.c
+>>>>>>> 21ad0c3 (medium)
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
 
