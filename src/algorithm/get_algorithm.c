@@ -6,11 +6,11 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 16:15:27 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 17:32:24 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/02 17:38:56 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 void	get_algorithm(t_optype opt, t_stacks stack, t_stats **stats)
 {
