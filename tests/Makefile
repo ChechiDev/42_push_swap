@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/23 16:20:56 by sperez-l          #+#    #+#              #
-#    Updated: 2026/02/27 11:29:47 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/03/03 16:10:02 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ PS_SRCS := \
 	../src/check/check_first.c \
 	../src/parse/parse_options.c \
 	../src/parse/parse_params.c \
-	../src/parse/parse_disorder_index.c \
+	../src/algorithm/get_disorder_index.c \
 	../src/utils/add_node.c \
 	../src/utils/print_stack.c \
 	../src/utils/get_argv_opt.c \
