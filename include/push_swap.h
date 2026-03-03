@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 17:14:54 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 18:07:37 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,6 @@ void	bench_count(t_stats **stats);
 void	bench_print_info(t_stats **stats, t_optype opt);
 void	print_each_count(t_stats *s);
 void	print_bench_strategy(t_stats *s, t_optype opt);
+void	print_disorder(t_stats *s);
 
 #endif
