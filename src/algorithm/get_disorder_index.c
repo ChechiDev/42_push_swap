@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_disorder_index.c                             :+:      :+:    :+:   */
+/*   get_disorder_index.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/23 18:24:50 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 18:45:41 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/03/03 16:07:28 by sperez-l          #+#    #+#             */
+/*   Updated: 2026/03/03 16:07:32 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	parse_disorder_index(int n, t_list *stack_a)
+float	get_disorder_index(int n, t_list *stack_a)
 {
 	t_list	*tmp;
 	float	even_total;

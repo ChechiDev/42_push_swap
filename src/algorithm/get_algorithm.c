@@ -6,11 +6,19 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 16:15:27 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 19:17:29 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:09:17 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	set_simple(t_stacks stack, t_stacks **stats)
+{
+	if ((*stats)->isbench)
+		bench_simple(stack, stats);
+	else
+		simple(stack.stack_a, stack.stack_b);
+}
 
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
 {
@@ -27,6 +35,6 @@ void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
 			opt = COMPLEX;
 	}
 	if (opt == SIMPLE)
-		set_simple(stack, stats);
+		run_simple(stack, stats);
 	return ;
 }
