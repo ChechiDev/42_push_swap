@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 16:24:09 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 19:16:15 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 13:46:49 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,4 @@ void	set_adaptive(t_stacks stack, t_options **options)
 		stats->isadaptive = 1;
 	get_algorithm(opt, stack, &stats);
 	free(stats);
-}
-
-void	set_simple(t_stacks stack, t_stats **stats)
-{
-
 }
