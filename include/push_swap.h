@@ -125,9 +125,18 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* Algorithm */
-double		disorder_meter(t_list *stack_a);
-void		simple(t_list **stack_a, t_list **stack_b);
-void		last_three(t_list **stack_a, t_list **stack_b);
-void		sort_3(t_list **stack_a);
+double	disorder_meter(t_list *stack_a);
+void	simple(t_list **stack_a, t_list **stack_b);
+void	last_three(t_list **stack_a, t_list **stack_b);
+void	sort_3(t_list **stack_a);
+void	medium(t_stacks s);
+void	get_chunks(t_stacks s, long *arr);
+int		get_n_chunks(int n);
+int		in_range(t_list *stack_a, long *arr, int start, int end);
+void	nearest_number(t_stacks s, long *arr);
+int		get_top_pos(t_list *stack_a, long *arr, int start, int end);
+int		get_bottom_pos(t_list *stack_a, long *arr, int start, int end);
+void	push_to_a(t_stacks s);
+int		get_max_pos(t_list *stack_b);
 
 #endif

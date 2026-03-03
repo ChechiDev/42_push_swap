@@ -56,7 +56,6 @@ void	sort_3(t_list **stack_a)
 		ra(stack_a);
 }
 
-
 void	last_three(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) == 2)

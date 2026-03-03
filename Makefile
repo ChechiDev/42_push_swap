@@ -59,13 +59,11 @@ $(DNAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
 	@echo "\nPUSH_SWAP DEBUG COMPILED!\n"
 
-# Compile .c from project root
 $(OBJS_DIR)/%.o: %.c Makefile include/push_swap.h
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 	@echo "$(BUILD_MSG) $<"
 
-# Compile .c from src/
 $(OBJS_DIR)/%.o: $(SRC_DIR)/%.c Makefile include/push_swap.h
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
