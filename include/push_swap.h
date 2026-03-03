@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 16:07:15 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 16:35:05 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* Algorithm */
-float	get_disorder_index(int n, t_list *stack_a)
+float	get_disorder_index(int n, t_list *stack_a);
 void	simple(t_list **stack_a, t_list **stack_b);
 void	last_three(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
@@ -137,6 +137,6 @@ void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
 void	set_adaptive(t_stacks stack, t_options **options);
 
 /* Bench */
-void	bench_count(t_stats **stats)
+void	bench_count(t_stats **stats);
 
 #endif

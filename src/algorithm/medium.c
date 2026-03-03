@@ -82,13 +82,13 @@ void	push_to_a(t_stacks s)
 void	medium(t_stacks s)
 {
 	long	*arr;
-	int	size;
-	double	disorder;
+	int		size;
+	float	disorder;
 
 	size = ft_lstsize(*s.stack_a);
 	if (size == 1)
 		return ;
-	disorder = disorder(*s.stack_a);
+	disorder = get_disorder_index(*s.stack_a);
 	if (disorder == 0)
 		return ;
 	arr = array_sort(*s.stack_a, size);
