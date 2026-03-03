@@ -6,13 +6,29 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 17:00:32 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 17:28:42 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 17:50:00 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* TODO: Funcion que imprima el % index desorder */
+void	print_disorder(t_stats *s)
+{
+	int	whole;
+	int	decimal;
+
+	whole = (int)s->dis_index;
+	decimal = (int)(s->dis_index * 100) % 100;
+	if (decimal < 0)
+		decimal *= -1;
+	write(2, "[BENCH] Disorder:  ", 19);
+	ft_putnbr_fd(whole, 2);
+	write(2, ".", 1);
+	if (decimal < 10)
+		write(2, "0", 1);
+	ft_putnbr_fd(decimal, 2);
+	write(2, "%\n", 2);
+}
 
 void	print_bench_strategy(t_stats *s, t_optype opt)
 {
@@ -71,6 +87,7 @@ void	bench_print_info(t_stats **stats, t_optype opt)
 	if (!stats || !*stats)
 		return ;
 	s = *stats;
+	print_disorder(s);
 	print_bench_strategy(s, opt);
 	print_each_count(s);
 }
