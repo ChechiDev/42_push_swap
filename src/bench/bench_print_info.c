@@ -6,15 +6,40 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 17:00:32 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 17:05:46 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 17:28:42 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* TODO: Funcion que imprima el % index desorder */
+
+void	print_bench_strategy(t_stats *s, t_optype opt)
+{
+	if (s->algorithm == SIMPLE)
+		write(2, "[BENCH] Strategy:  Simple / O(n^2)\n", 35);	
+	else if (s->algorithm == MEDIUM)
+		write(2, "[BENCH] Strategy:  Medium / O(n√n)\n", 37);
+	else if (s->algorithm == COMPLEX)
+		write(2, "[BENCH] Strategy:  Complex / O(n log n)\n", 40);
+	else if (s->algorithm == ADAPTIVE)
+	{
+		write(2, "[BENCH] Strategy:  Adaptive / ", 30);
+		if (opt == SIMPLE)
+			write(2, "O(n^2)\n", 8);
+		else if (opt == MEDIUM)
+			write(2, "O(n√n)\n", 9);
+		else if (opt == COMPLEX)
+			write(2, "O(n log n)\n", 11);
+	}
+	write(2, "[BENCH] Total_ops:  ", 20);
+	ft_putnbr_fd(s->total_count, 2);
+	write(2, "\n", 1);
+}
+
 void	print_each_count(t_stats *s)
 {
-	write(2, "[bench] sa:  ", 13);
+	write(2, "[BENCH] sa:  ", 13);
 	ft_putnbr_fd(s->sa_count, 2);
 	write(2, "  sb:  ", 7);
 	ft_putnbr_fd(s->sb_count, 2);
@@ -24,7 +49,7 @@ void	print_each_count(t_stats *s)
 	ft_putnbr_fd(s->pa_count, 2);
 	write(2, "  pb:  ", 7);
 	ft_putnbr_fd(s->pb_count, 2);
-	write(2, "\n[bench] ra:  ", 14);
+	write(2, "\n[BENCH] ra:  ", 14);
 	ft_putnbr_fd(s->ra_count, 2);
 	write(2, "  rb:  ", 7);
 	ft_putnbr_fd(s->rb_count, 2);
@@ -39,12 +64,13 @@ void	print_each_count(t_stats *s)
 	write(2, "\n", 1);	
 }
 
-void	bench_prin_info(t_stats **stats, t_optype opt)
+void	bench_print_info(t_stats **stats, t_optype opt)
 {
 	t_stats	*s;
 
 	if (!stats || !*stats)
 		return ;
 	s = *stats;
+	print_bench_strategy(s, opt);
 	print_each_count(s);
 }
