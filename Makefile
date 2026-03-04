@@ -6,7 +6,7 @@
 #    By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 16:50:46 by sperez-l          #+#    #+#              #
-#    Updated: 2026/03/02 19:00:57 by sperez-l         ###   ########.fr        #
+#    Updated: 2026/03/03 13:44:58 by sperez-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,46 +18,15 @@ CFLAGS      := -Wall -Wextra -Werror
 CPPFLAGS    := -I./include -I./libft/include
 
 SRC_DIR     := src
-CHECK_DIR   := $(SRC_DIR)/check
-PARSE_DIR   := $(SRC_DIR)/parse
-MOV_DIR     := $(SRC_DIR)/movement
-ALGO_DIR    := $(SRC_DIR)/algorithm
-BENCH_DIR   := $(SRC_DIR)/bench
-UTILS_DIR   := $(SRC_DIR)/utils
-
 LIBFT_DIR   := ./libft
 LIBFT       := $(LIBFT_DIR)/libft.a
 
 LDFLAGS     := -L$(LIBFT_DIR)
 LDLIBS      := -lft
 
-# Sources (root + src/)
+# Recoge todos los .c de src/ recursivamente, excluyendo tests/
 SRCS_ROOT   := push_swap.c
-SRCS_SRC    := $(CHECK_DIR)/check_first.c \
-	       $(CHECK_DIR)/check_flags.c \
-	       $(CHECK_DIR)/check_options.c \
-	       $(CHECK_DIR)/check_duplicates.c \
-	       $(CHECK_DIR)/check_minmax.c \
-	       $(CHECK_DIR)/check_num.c \
-	       $(PARSE_DIR)/parse_params.c \
-	       $(PARSE_DIR)/parse_options.c \
-	       $(PARSE_DIR)/parse_disorder_index.c \
-	       $(MOV_DIR)/push.c \
-	       $(MOV_DIR)/rotate.c \
-	       $(MOV_DIR)/swap.c \
-	       $(MOV_DIR)/reverse_rotate.c \
-	       $(UTILS_DIR)/free_list.c \
-	       $(UTILS_DIR)/free_all.c \
-	       $(UTILS_DIR)/add_node.c \
-	       $(UTILS_DIR)/get_argv_opt.c \
-	       $(UTILS_DIR)/get_option.c \
-	       $(ALGO_DIR)/simple.c \
-	       $(ALGO_DIR)/disorder.c \
-	       $(ALGO_DIR)/medium.c \
-	       $(ALGO_DIR)/medium_chunks. \
-	       $(ALGO_DIR)/get_algorithm.c \
-	       $(ALGO_DIR)/set_algorithm.c \
-	       $(BENCH_DIR)/bench_simple.c
+SRCS_SRC    := $(shell find $(SRC_DIR) -name '*.c' -not -path '*/tests/*')
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
 
@@ -90,13 +59,11 @@ $(DNAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
 	@echo "\nPUSH_SWAP DEBUG COMPILED!\n"
 
-# Compile .c from project root
 $(OBJS_DIR)/%.o: %.c Makefile include/push_swap.h
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 	@echo "$(BUILD_MSG) $<"
 
-# Compile .c from src/
 $(OBJS_DIR)/%.o: $(SRC_DIR)/%.c Makefile include/push_swap.h
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@

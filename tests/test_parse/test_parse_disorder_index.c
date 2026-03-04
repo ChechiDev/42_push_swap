@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:54:52 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/26 19:03:07 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 16:11:54 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ int	main(void)
 	long	two_ok[2] = {1, 2};
 	long	two_ko[2] = {2, 1};
 
-	printf("=== TEST parse_disorder_index ===\n\n");
+	printf("=== TEST get_disrder_index ===\n\n");
 
 	printf("-- 1 elemento\n");
 	stack = make_list(single, 1);
 	printf("stack: ");
 	print_list_stdout(stack);
 	printf("resultado: %.2f (esperado: 0.00)\n\n",
-		parse_disorder_index(1, stack));
+		get_disorder_index(1, stack));
 	free_list(stack);
 
 	printf("-- Ordenado\n");
@@ -63,7 +63,7 @@ int	main(void)
 	printf("stack: ");
 	print_list_stdout(stack);
 	printf("resultado: %.2f (esperado: 0.00)\n\n",
-		parse_disorder_index(4, stack));
+		get_disorder_index(4, stack));
 	free_list(stack);
 
 	printf("-- Invertido (todos desordenados)\n");
@@ -71,7 +71,7 @@ int	main(void)
 	printf("stack: ");
 	print_list_stdout(stack);
 	printf("resultado: %.2f (esperado: 1.00)\n\n",
-		parse_disorder_index(4, stack));
+		get_disorder_index(4, stack));
 	free_list(stack);
 
 	printf("-- 2 elementos ordenados\n");
@@ -79,7 +79,7 @@ int	main(void)
 	printf("stack: ");
 	print_list_stdout(stack);
 	printf("resultado: %.2f (esperado: 0.00)\n\n",
-		parse_disorder_index(2, stack));
+		get_disorder_index(2, stack));
 	free_list(stack);
 
 	printf("-- 2 elementos invertidos\n");
@@ -87,7 +87,7 @@ int	main(void)
 	printf("stack: ");
 	print_list_stdout(stack);
 	printf("resultado: %.2f (esperado: 1.00)\n\n",
-		parse_disorder_index(2, stack));
+		get_disorder_index(2, stack));
 	free_list(stack);
 
 	return (0);

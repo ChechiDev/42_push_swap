@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 18:32:07 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 17:14:54 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,6 @@ int		check_duplicates(char **argv);
 /* Parse */
 int		parse_options(int argc, char **argv, t_options **options);
 int		parse_params(int argc, char **argv, t_list **stack_a);
-float	parse_disorder_index(int n, t_list *stack_a);
-
-/* Algorithm */
-void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
-void	set_adaptive(t_stacks stack, t_options **options);
 
 /* Free */
 void	free_list(t_list *stack_a);
@@ -125,7 +120,7 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* Algorithm */
-double	disorder_meter(t_list *stack_a);
+float	get_disorder_index(int n, t_list *stack_a);
 void	simple(t_list **stack_a, t_list **stack_b);
 void	last_three(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
@@ -138,5 +133,13 @@ int		get_top_pos(t_list *stack_a, long *arr, int start, int end);
 int		get_bottom_pos(t_list *stack_a, long *arr, int start, int end);
 void	push_to_a(t_stacks s);
 int		get_max_pos(t_list *stack_b);
+void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
+void	set_adaptive(t_stacks stack, t_options **options);
+
+/* Bench */
+void	bench_count(t_stats **stats);
+void	bench_print_info(t_stats **stats, t_optype opt);
+void	print_each_count(t_stats *s);
+void	print_bench_strategy(t_stats *s, t_optype opt);
 
 #endif

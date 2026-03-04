@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 17:36:49 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/25 17:50:28 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 16:08:35 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	parse_params(int argc, char **argv, t_list **stack_a)
 		i++;
 	}
 	if (count > 0)
-		parse_disorder_index(count, *stack_a);
+		get_disorder_index(count, *stack_a);
 	return (1);
 }

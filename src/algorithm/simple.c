@@ -84,7 +84,7 @@ void	simple(t_list **stack_a, t_list **stack_b)
 	int	pos_min_a;
 	int	moves;
 
-	if (!stack_a || !*stack_a || disorder_meter(*stack_a) == 0)
+	if (!stack_a || !*stack_a || get_disorder_index(*stack_a) == 0)
 		return ;
 	while (ft_lstsize(*stack_a) > 3)
 	{
