@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/04 16:58:39 by javisan2          #+#    #+#             */
+/*   Updated: 2026/03/04 16:58:42 by javisan2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Algoritmo simple (O(n2)):
 Implementa al menos un algoritmo base perteneciente a la clase de
@@ -66,7 +78,7 @@ void	last_three(t_list **stack_a, t_list **stack_b)
 		pa(stack_a, stack_b);
 }
 
-void	simple(t_list **stack_a, t_list **stack_b) // HA DE LLEGAR UNA PILA A con + de 1 nodo!! ¿Se comprueba antes? >> si no en el 1er IF (...|| !(*stack_a)->next)
+void	simple(t_list **stack_a, t_list **stack_b)
 {
 	int	nodes_a;
 	int	pos_min_a;
