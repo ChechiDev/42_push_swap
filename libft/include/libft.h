@@ -36,6 +36,7 @@ typedef struct s_list
 }	t_list;
 
 /* Libft functions */
+void	ft_write(int fd, char *s, int len);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
@@ -43,6 +44,7 @@ int		ft_strcmp(char *s1, char *s2);
 void	ft_bzero(void *p, size_t i);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
+int		ft_error(void);
 
 /* lists */
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -54,6 +56,5 @@ long	ft_atol(char *argv_char);
 /* algorithm */
 long	*array_sort(t_list *stack, int len);
 void	bubblesort(long	*arr, size_t size);
-
 
 #endif
