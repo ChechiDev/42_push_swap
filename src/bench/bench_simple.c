@@ -14,5 +14,5 @@
 
 void	bench_simple(t_stacks stack, t_stats **stats)
 {
-	
+
 }

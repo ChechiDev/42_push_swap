@@ -121,6 +121,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* Algorithm */
 float	get_disorder_index(int n, t_list *stack_a);
+double	disorder_meter(t_list *stack_a);
 void	simple(t_list **stack_a, t_list **stack_b);
 void	last_three(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
@@ -139,9 +140,10 @@ void	set_adaptive(t_stacks stack, t_options **options);
 
 /* Bench */
 void	bench_count(t_stats **stats);
-void	bench_print_info(t_stats **stats, t_optype opt);
+void	bench_print_info(t_stats **stats, t_flag_opt opt);
+void	bench_simple(t_stacks stack, t_stats **stats);
 void	print_each_count(t_stats *s);
-void	print_bench_strategy(t_stats *s, t_optype opt);
+void	print_bench_strategy(t_stats *s, t_flag_opt opt);
 void	print_disorder(t_stats *s);
 
 #endif

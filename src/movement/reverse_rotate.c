@@ -28,7 +28,7 @@ void	rra(t_list **stack_a)
 	last->next = NULL;
 	runner->next = *stack_a;
 	*stack_a = runner;
-	write (1, "rra\n", 4);
+	ft_write(1, "rra\n", 4);
 }
 
 void	rrb(t_list **stack_b)
@@ -47,12 +47,12 @@ void	rrb(t_list **stack_b)
 	last->next = NULL;
 	runner->next = *stack_b;
 	*stack_b = runner;
-	write (1, "rrb\n", 4);
+	ft_write(1, "rrb\n", 4);
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
-	write (1, "rrr\n", 4);
+	ft_write(1, "rrr\n", 4);
 }

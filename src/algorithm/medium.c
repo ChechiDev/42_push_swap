@@ -16,6 +16,8 @@ typedef struct s_stacks
 // Esta funcion (get_bottom_pos) la llamo desde medium_chunks.c
 //La pongo aquí porque sobraba espacio, en medium_chunks ya hay 5 funciones.
 
+#include "push_swap.h"
+
 int	get_bottom_pos(t_list *stack_a, long *arr, int start, int end)
 {
 	int	i;
@@ -88,7 +90,7 @@ void	medium(t_stacks s)
 	size = ft_lstsize(*s.stack_a);
 	if (size == 1)
 		return ;
-	disorder = get_disorder_index(*s.stack_a);
+	disorder = get_disorder_index(size, *s.stack_a);
 	if (disorder == 0)
 		return ;
 	arr = array_sort(*s.stack_a, size);
