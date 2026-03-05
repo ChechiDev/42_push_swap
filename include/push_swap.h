@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 17:14:54 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/03 18:07:37 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ int		get_top_pos(t_list *stack_a, long *arr, int start, int end);
 int		get_bottom_pos(t_list *stack_a, long *arr, int start, int end);
 void	push_to_a(t_stacks s);
 int		get_max_pos(t_list *stack_b);
+
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
 void	set_adaptive(t_stacks stack, t_options **options);
 
@@ -141,5 +142,6 @@ void	bench_count(t_stats **stats);
 void	bench_print_info(t_stats **stats, t_optype opt);
 void	print_each_count(t_stats *s);
 void	print_bench_strategy(t_stats *s, t_optype opt);
+void	print_disorder(t_stats *s);
 
 #endif
