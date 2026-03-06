@@ -14,5 +14,6 @@
 
 void	bench_simple(t_stacks stack, t_stats **stats)
 {
-
+	(*stats)->algorithm = SIMPLE;
+	simple(stack.stack_a, stack.stack_b);
 }

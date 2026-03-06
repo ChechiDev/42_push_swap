@@ -20,6 +20,12 @@ static void	set_simple(t_stacks stack, t_stats **stats)
 		simple(stack.stack_a, stack.stack_b);
 }
 
+static void	set_medium(t_stacks stack, t_stats **stats)
+{
+	(void)stats;
+	medium(stack);
+}
+
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
 {
 	if (opt == UNDEFINED || opt == ADAPTIVE)
@@ -36,5 +42,6 @@ void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
 	}
 	if (opt == SIMPLE)
 		set_simple(stack, stats);
-	return ;
+	else if (opt == MEDIUM || opt == COMPLEX)
+		set_medium(stack, stats);
 }
