@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	set_simple(t_stacks stack, t_stacks **stats)
+static void	set_simple(t_stacks stack, t_stats **stats)
 {
 	if ((*stats)->isbench)
 		bench_simple(stack, stats);

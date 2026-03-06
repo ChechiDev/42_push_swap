@@ -22,7 +22,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	*stack_a = tmp->next;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
-	write (1, "pb\n", 3);
+	ft_write(1, "pb\n", 3);
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)
@@ -35,5 +35,5 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	*stack_b = tmp->next;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
-	write (1, "pa\n", 3);
+	ft_write(1, "pa\n", 3);
 }

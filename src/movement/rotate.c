@@ -22,7 +22,7 @@ void	ra(t_list **stack_a)
 	first->next = NULL;
 	last = ft_lstlast(*stack_a);
 	last->next = first;
-	write (1, "ra\n", 3);
+	ft_write(1, "ra\n", 3);
 }
 
 void	rb(t_list **stack_b)
@@ -37,12 +37,12 @@ void	rb(t_list **stack_b)
 	first->next = NULL;
 	last = ft_lstlast(*stack_b);
 	last->next = first;
-	write (1, "rb\n", 3);
+	ft_write(1, "rb\n", 3);
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);
-	write (1, "rr\n", 3);
+	ft_write(1, "rr\n", 3);
 }
