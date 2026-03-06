@@ -12,47 +12,43 @@ rrr :rrayrrbalavez.
 
 #include "push_swap.h"
 
-void	rra(t_list **stack_a)
+static void	reverse_rotate(t_list **stack)
 {
 	t_list	*last;
 	t_list	*runner;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	runner = *stack_a;
+	runner = *stack;
 	while (runner->next != NULL)
 	{
 		last = runner;
 		runner = runner->next;
 	}
 	last->next = NULL;
-	runner->next = *stack_a;
-	*stack_a = runner;
+	runner->next = *stack;
+	*stack = runner;
+}
+
+void	rra(t_list **stack_a)
+{
+	reverse_rotate(stack_a);
+	if (!stack_a || !*stack_a)
+		return ;
 	ft_write(1, "rra\n", 4);
 }
 
 void	rrb(t_list **stack_b)
 {
-	t_list	*last;
-	t_list	*runner;
-
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
+	reverse_rotate(stack_b);
+	if (!stack_b || !*stack_b)
 		return ;
-	runner = *stack_b;
-	while (runner->next)
-	{
-		last = runner;
-		runner = runner->next;
-	}
-	last->next = NULL;
-	runner->next = *stack_b;
-	*stack_b = runner;
 	ft_write(1, "rrb\n", 4);
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
-	rra(stack_a);
-	rrb(stack_b);
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 	ft_write(1, "rrr\n", 4);
 }

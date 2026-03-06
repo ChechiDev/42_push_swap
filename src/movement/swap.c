@@ -43,40 +43,40 @@ t_list	*new_node(int value)
 }
 */
 
-void	sa(t_list **stack_a)
+static void	swap(t_list **stack)
 {
 	t_list	*first;
 	t_list	*second;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	first = *stack_a;
+	first = *stack;
 	second = first->next;
 	first->next = second->next;
 	second->next = first;
-	*stack_a = second;
+	*stack = second;
+}
+
+void	sa(t_list **stack_a)
+{
+	swap(stack_a);
+	if (!stack_a || !*stack_a)
+		return ;
 	ft_write(1, "sa\n", 3);
 }
 
 void	sb(t_list **stack_b)
 {
-	t_list	*first;
-	t_list	*second;
-
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
+	swap(stack_b);
+	if (!stack_b || !*stack_b)
 		return ;
-	first = *stack_b;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack_b = second;
 	ft_write(1, "sb\n", 3);
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
+	swap(stack_a);
+	swap(stack_b);
 	ft_write(1, "ss\n", 3);
 }
 
