@@ -134,6 +134,11 @@ int		get_top_pos(t_list *stack_a, long *arr, int start, int end);
 int		get_bottom_pos(t_list *stack_a, long *arr, int start, int end);
 void	push_to_a(t_stacks s);
 int		get_max_pos(t_list *stack_b);
+void	complex_algorithm(t_list **a, t_list **b, t_stats *bench);
+void	radix_lsd(t_list **a, t_list **b, t_stats *bench);
+void	index_stack(t_list *a);
+void	assign_index(t_list *a, long *arr, int size);
+int		max_index_bits(t_list *a);
 
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
 void	set_adaptive(t_stacks stack, t_options **options);
