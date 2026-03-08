@@ -26,6 +26,7 @@ LDLIBS      := -lft
 
 # Recoge todos los .c de src/ recursivamente, excluyendo tests/
 SRCS_ROOT   := push_swap.c
+
 SRCS_SRC    := $(shell find $(SRC_DIR) -name '*.c' -not -path '*/tests/*')
 
 SRCS        := $(SRCS_ROOT) $(SRCS_SRC)
