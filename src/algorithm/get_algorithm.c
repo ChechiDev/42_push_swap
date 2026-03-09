@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 16:15:27 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 16:23:35 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:39:26 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,18 @@ static void	set_simple(t_stacks stack, t_stats **stats)
 
 static void	set_medium(t_stacks stack, t_stats **stats)
 {
-	(void)stats;
-	medium(stack);
+	if ((*stats)->isbench)
+		bench_medium(stack, stats);
+	else
+		medium(stack.stack_a, stack.stack_b);
+}
+
+static void	set_complex(t_stacks stack, t_stats **stats)
+{
+	if ((*stats)->isbench)
+		bench_complex(stack, stats);
+	else
+		complex(stack.stack_a, stack.stack_b);
 }
 
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
@@ -42,6 +52,14 @@ void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats)
 	}
 	if (opt == SIMPLE)
 		set_simple(stack, stats);
-	else if (opt == MEDIUM || opt == COMPLEX)
+	else if (opt == MEDIUM)
 		set_medium(stack, stats);
+	else if (opt == COMPLEX)
+		set_complex(stack, stats);
+	else
+	{
+		if ((*stats)->isbench)
+			bench_print_info(stats, SIMPLE);
+	}
+	return ;
 }

@@ -6,21 +6,14 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 17:36:49 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/09 19:10:28 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:37:41 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 
-static int	ft_error(void)
-{
-	int	ret;
-
-	ret = write(2, "Error\n", 6);
-	return (ret * 0);
-}
-
-in	parse_params(int argc, char **argv, t_list **stack_a)
+int	parse_params(int argc, char **argv, t_list **stack_a)
 {
 	int			i;
 	int			count;
