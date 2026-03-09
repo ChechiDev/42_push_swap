@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/04 17:33:30 by javisan2          #+#    #+#             */
+/*   Updated: 2026/03/04 17:33:32 by javisan2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 ra (rotate a): Desplaza hacia arriba todos los elementos del stack
 a una posición, convirtiendo el primer elemento en el último.
