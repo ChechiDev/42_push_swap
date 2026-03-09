@@ -20,6 +20,7 @@ b una posición, convirtiendo el primer elemento en el último.
 rr :ra y rb a la vez.
 */
 
+#include "libft.h"
 #include "push_swap.h"
 
 static void	rotate(t_list **stack)

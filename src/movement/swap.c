@@ -22,6 +22,7 @@ No hace nada si hay solo uno o ningún elemento.
 ss :saysbalavez.
 */
 
+#include "libft.h"
 #include "push_swap.h"
 /*
 #include <stdio.h>
