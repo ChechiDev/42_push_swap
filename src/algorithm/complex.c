@@ -34,6 +34,7 @@ radix_lsd:
 Algoritmo radix (LSD) optimizado para ahorrar la última vuelta
 */
 
+#include "libft.h"
 #include "push_swap.h"
 
 /*
@@ -116,7 +117,7 @@ void	index_stack(t_list *a)
 	free(arr);
 }
 
-void	radix_lsd(t_list **a, t_list **b, t_stats *bench)
+void	radix_lsd(t_list **a, t_list **b)
 {
 	int		i;
 	int		j;
@@ -130,18 +131,18 @@ void	radix_lsd(t_list **a, t_list **b, t_stats *bench)
 		while (j-- > 0)
 		{
 			if (((*a)->index >> i) & 1)
-				ra(a, bench);
+				ra(a);
 			else
-				pb(a, b, bench);
+				pb(a, b);
 		}
 		while (*b)
-			pa(a, b, bench);
+			pa(a, b);
 		i++;
 	}
 }
 
-void	complex_algorithm(t_list **a, t_list **b, t_stats *bench)
+void	complex_algorithm(t_list **a, t_list **b)
 {
 	index_stack(*a);
-	radix_lsd(a, b, bench);
+	radix_lsd(a, b);
 }
