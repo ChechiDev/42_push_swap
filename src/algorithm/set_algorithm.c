@@ -25,7 +25,7 @@ void	set_adaptive(t_stacks stack, t_options **options)
 	stats->size_a = ft_lstsize(*stack.stack_a);
 	stats->dis_index = get_disorder_index(stats->size_a, *stack.stack_a);
 	if (options && *options)
-		get_option(&opt, stats, *options); 
+		get_option(&opt, stats, *options);
 	else
 		stats->isadaptive = 1;
 	get_algorithm(opt, stack, &stats);

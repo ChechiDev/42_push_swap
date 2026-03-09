@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   complex.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/09 17:00:16 by javisan2          #+#    #+#             */
+/*   Updated: 2026/03/09 17:00:19 by javisan2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 La idea es:
 Primero convertir valores a índices y entonces ordenar por bits
@@ -94,7 +106,7 @@ void	assign_index(t_list *a, long *arr, int size)
 void	index_stack(t_list *a)
 {
 	long	*arr;
-	int	size;
+	int		size;
 
 	size = ft_lstsize(a);
 	arr = array_sort(a, size);
