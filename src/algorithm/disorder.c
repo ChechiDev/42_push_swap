@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/03 16:00:26 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/03 16:00:33 by sperez-l         ###   ########.fr       */
+/*   Created: 2026/03/04 17:30:05 by javisan2          #+#    #+#             */
+/*   Updated: 2026/03/04 17:30:13 by javisan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ double	disorder_meter(t_list *stack_a)
 {
 	t_list	*i;
 	t_list	*j;
-	int	wrong_pairs;
-	int	total_pairs;
+	int		wrong_pairs;
+	int		total_pairs;
 
 	i = stack_a;
 	wrong_pairs = 0;

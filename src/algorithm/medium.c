@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   medium.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/04 17:31:13 by javisan2          #+#    #+#             */
+/*   Updated: 2026/03/04 17:31:18 by javisan2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 El algoritmo por rangos reduce el número de rotaciones porque
 cada elemento se empuja una sola vez y la pila B se prepara
