@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 17:00:16 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/09 17:00:19 by javisan2         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:29:32 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	index_stack(t_list *a)
 	free(arr);
 }
 
-void	radix_lsd(t_list **a, t_list **b)
+void	radix_lsd(t_list **a, t_list **b, t_stats **bench)
 {
 	int		i;
 	int		j;
@@ -131,18 +131,18 @@ void	radix_lsd(t_list **a, t_list **b)
 		while (j-- > 0)
 		{
 			if (((*a)->index >> i) & 1)
-				ra(a);
+				ra(a, bench);
 			else
-				pb(a, b);
+				pb(a, b, bench);
 		}
 		while (*b)
-			pa(a, b);
+			pa(a, b, bench);
 		i++;
 	}
 }
 
-void	complex_algorithm(t_list **a, t_list **b)
+void	complex_algorithm(t_list **a, t_list **b, t_stats **bench)
 {
 	index_stack(*a);
-	radix_lsd(a, b);
+	radix_lsd(a, b, bench);
 }

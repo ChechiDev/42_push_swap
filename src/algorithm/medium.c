@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:31:13 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/04 17:31:18 by javisan2         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:22:46 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	get_max_pos(t_list *stack_b)
 	return (max_pos);
 }
 
-void	push_to_a(t_stacks s)
+void	push_to_a(t_stacks s, t_stats **bench)
 {
 	int	max_pos;
 	int	size;
@@ -81,19 +81,19 @@ void	push_to_a(t_stacks s)
 		if (max_pos <= size / 2)
 		{
 			while (max_pos-- > 0)
-				rb(s.stack_b);
+				rb(s.stack_b, bench);
 		}
 		else
 		{
 			max_pos = size - max_pos;
 			while (max_pos-- > 0)
-				rrb(s.stack_b);
+				rrb(s.stack_b, bench);
 		}
-		pa(s.stack_a, s.stack_b);
+		pa(s.stack_a, s.stack_b, bench);
 	}
 }
 
-void	medium(t_stacks s)
+void	medium(t_stacks s, t_stats **bench)
 {
 	long	*arr;
 	int		size;
@@ -108,7 +108,7 @@ void	medium(t_stacks s)
 	arr = array_sort(*s.stack_a, size);
 	if (!arr)
 		return ;
-	get_chunks(s, arr);
-	push_to_a(s);
-	free (arr);
+	get_chunks(s, arr, bench);
+	push_to_a(s, bench);
+	free(arr);
 }

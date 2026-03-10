@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 16:58:39 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/04 16:58:42 by javisan2         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:05:25 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	get_min(t_list *stack_a)
 	return (index_min);
 }
 
-void	sort_3(t_list **stack_a)
+void	sort_3(t_list **stack_a, t_stats ** bench)
 {
 	int	node_1;
 	int	node_2;
@@ -54,33 +54,33 @@ void	sort_3(t_list **stack_a)
 	node_3 = (*stack_a)->next->next->content;
 	if (node_1 > node_2 && node_2 > node_3)
 	{
-		sa(stack_a);
-		rra(stack_a);
+		sa(stack_a, bench);
+		rra(stack_a, bench);
 	}
 	else if (node_2 > node_3 && node_1 < node_3)
 	{
-		sa(stack_a);
-		ra(stack_a);
+		sa(stack_a, bench);
+		ra(stack_a, bench);
 	}
 	else if (node_3 < node_2 && node_1 < node_2)
-		rra(stack_a);
+		rra(stack_a, bench);
 	else if (node_1 > node_2 && node_1 < node_3)
-		sa(stack_a);
+		sa(stack_a, bench);
 	else if (node_1 > node_2 && node_2 < node_3)
-		ra(stack_a);
+		ra(stack_a, bench);
 }
 
-void	last_three(t_list **stack_a, t_list **stack_b)
+void	last_three(t_list **stack_a, t_list **stack_b, t_stats **bench)
 {
 	if (ft_lstsize(*stack_a) == 2)
-		sa(stack_a);
+		sa(stack_a, bench);
 	else
-		sort_3(stack_a);
+		sort_3(stack_a, bench);
 	while (*stack_b)
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, bench);
 }
 
-void	simple(t_list **stack_a, t_list **stack_b)
+void	simple(t_list **stack_a, t_list **stack_b, t_stats **bench)
 {
 	int	nodes_a;
 	int	pos_min_a;
@@ -95,15 +95,15 @@ void	simple(t_list **stack_a, t_list **stack_b)
 		if (pos_min_a <= (nodes_a / 2))
 		{
 			while (pos_min_a-- != 0)
-				ra(stack_a);
+				ra(stack_a, bench);
 		}
 		else
 		{
 			moves = nodes_a - pos_min_a;
 			while (moves-- != 0)
-				rra(stack_a);
+				rra(stack_a, bench);
 		}
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, bench);
 	}
-	last_three(stack_a, stack_b);
+	last_three(stack_a, stack_b, bench);
 }

@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:32:03 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/04 17:32:06 by javisan2         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:26:28 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	get_top_pos(t_list *stack_a, long *arr, int start, int end)
 	return (-1);
 }
 
-void	nearest_number(t_stacks s, long *arr)
+void	nearest_number(t_stacks s, long *arr, t_stats **bench)
 {
 	int	top;
 	int	bottom;
@@ -64,21 +64,21 @@ void	nearest_number(t_stacks s, long *arr)
 	if (top <= size - bottom)
 	{
 		while (top-- > 0)
-			ra(s.stack_a);
+			ra(s.stack_a, bench);
 	}
 	else
 	{
 		bottom = size - bottom;
 		while (bottom-- > 0)
-			rra(s.stack_a);
+			rra(s.stack_a, bench);
 	}
 	pb(s.stack_a, s.stack_b);
 	pivot = s.start + (s.end - s.start) / 2;
 	if (ft_lstsize(*s.stack_b) > 1 && (*s.stack_b)->content < arr[pivot])
-		rb(s.stack_b);
+		rb(s.stack_b, bench);
 }
 
-void	get_chunks(t_stacks s, long *arr)
+void	get_chunks(t_stacks s, long *arr, t_stats **bench)
 {
 	int	total_size;
 	int	chunks;
@@ -97,7 +97,7 @@ void	get_chunks(t_stacks s, long *arr)
 		else
 			s.end = s.start + size -1;
 		while (in_range(*s.stack_a, arr, s.start, s.end))
-			nearest_number(s, arr);
+			nearest_number(s, arr, bench);
 		i++;
 	}
 }
