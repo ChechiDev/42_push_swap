@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 13:29:01 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/09 19:09:27 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:30:24 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,39 +107,38 @@ int		get_option(t_flag_opt *opt, t_stats *st, t_options *o);
 void	print_stack(t_list *stack, char *label);
 
 /* Movements */
-void	pb(t_list **stack_a, t_list **stack_b);
-void	pa(t_list **stack_a, t_list **stack_b);
-void	ra(t_list **stack_a);
-void	rb(t_list **stack_b);
-void	rr(t_list **stack_a, t_list **stack_b);
-void	sa(t_list **stack_a);
-void	sb(t_list **stack_b);
-void	ss(t_list **stack_a, t_list **stack_b);
-void	rra(t_list **stack_a);
-void	rrb(t_list **stack_b);
-void	rrr(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b, t_stats **bench);
+void	pa(t_list **stack_a, t_list **stack_b, t_stats **bench);
+void	ra(t_list **stack_a, t_stats **bench);
+void	rb(t_list **stack_b, t_stats **bench);
+void	rr(t_list **stack_a, t_list **stack_b, t_stats **bench);
+void	sa(t_list **stack_a, t_stats **bench);
+void	sb(t_list **stack_b, t_stats **bench);
+void	ss(t_list **stack_a, t_list **stack_b, t_stats **bench);
+void	rra(t_list **stack_a, t_stats **bench);
+void	rrb(t_list **stack_b, t_stats **bench);
+void	rrr(t_list **stack_a, t_list **stack_b, t_stats **bench);
 
 /* Algorithm */
 float	get_disorder_index(int n, t_list *stack_a);
 double	disorder_meter(t_list *stack_a);
 void	simple(t_list **stack_a, t_list **stack_b);
-void	last_three(t_list **stack_a, t_list **stack_b);
-void	sort_3(t_list **stack_a);
-void	medium(t_stacks s);
-void	get_chunks(t_stacks s, long *arr);
+void	last_three(t_list **stack_a, t_list **stack_b, t_stats **bench);
+void	sort_3(t_list **stack_a, t_stats ** bench);
+void	medium(t_stacks s, t_stats **bench);
+void	get_chunks(t_stacks s, long *arr, t_stats **bench);
 int		get_n_chunks(int n);
 int		in_range(t_list *stack_a, long *arr, int start, int end);
-void	nearest_number(t_stacks s, long *arr);
+void	nearest_number(t_stacks s, long *arr, t_stats **bench);
 int		get_top_pos(t_list *stack_a, long *arr, int start, int end);
 int		get_bottom_pos(t_list *stack_a, long *arr, int start, int end);
-void	push_to_a(t_stacks s);
+void	push_to_a(t_stacks s, t_stats **bench);
 int		get_max_pos(t_list *stack_b);
-void	complex_algorithm(t_list **a, t_list **b);
-void	radix_lsd(t_list **a, t_list **b);
+void	complex_algorithm(t_list **a, t_list **b, t_stats **bench);
+void	radix_lsd(t_list **a, t_list **b, t_stats **bench);
 void	index_stack(t_list *a);
 void	assign_index(t_list *a, long *arr, int size);
 int		max_index_bits(t_list *a);
-
 void	get_algorithm(t_flag_opt opt, t_stacks stack, t_stats **stats);
 void	set_adaptive(t_stacks stack, t_options **options);
 
@@ -149,5 +148,6 @@ void	bench_print_info(t_stats **stats, t_flag_opt opt);
 void	print_each_count(t_stats *s);
 void	print_bench_strategy(t_stats *s, t_flag_opt opt);
 void	print_disorder(t_stats *s);
+void	bench_simple(t_stacks stack, t_stats **bench);
 
 #endif

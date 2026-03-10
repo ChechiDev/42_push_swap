@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:33:05 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/04 17:33:09 by javisan2         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:12:00 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ No hace nada si a está vacío.
 #include "libft.h"
 #include "push_swap.h"
 
-void	pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_list **stack_a, t_list **stack_b, t_stats **bench)
 {
 	t_list	*tmp;
 
@@ -35,9 +35,11 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	tmp->next = *stack_b;
 	*stack_b = tmp;
 	ft_write(1, "pb\n", 3);
+	if (bench && *bench)
+		(*bench)->pb_count++;
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b, t_stats **bench)
 {
 	t_list	*tmp;
 
@@ -48,4 +50,6 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	tmp->next = *stack_a;
 	*stack_a = tmp;
 	ft_write(1, "pa\n", 3);
+	if (bench && *bench)
+		(*bench)->pa_count++;
 }
