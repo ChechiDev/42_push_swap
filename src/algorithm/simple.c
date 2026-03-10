@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 16:58:39 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/10 12:05:25 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:36:24 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	get_min(t_list *stack_a)
 	return (index_min);
 }
 
-void	sort_3(t_list **stack_a, t_stats ** bench)
+void	sort_3(t_list **stack_a, t_stats **bench)
 {
 	int	node_1;
 	int	node_2;

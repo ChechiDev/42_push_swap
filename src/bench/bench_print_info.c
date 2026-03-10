@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 17:00:32 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/04 15:03:06 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:40:15 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	print_disorder(t_stats *s)
 void	print_bench_strategy(t_stats *s, t_flag_opt opt)
 {
 	if (s->algorithm == SIMPLE)
-		ft_write(2, "[BENCH] Strategy:  Simple / O(n^2)\n", 35);	
+		ft_write(2, "[BENCH] Strategy:  Simple / O(n^2)\n", 35);
 	else if (s->algorithm == MEDIUM)
 		ft_write(2, "[BENCH] Strategy:  Medium / O(n√n)\n", 37);
 	else if (s->algorithm == COMPLEX)
@@ -77,7 +77,7 @@ void	print_each_count(t_stats *s)
 	ft_putnbr_fd(s->rrb_count, 2);
 	ft_write(2, "  rrr:  ", 8);
 	ft_putnbr_fd(s->rrr_count, 2);
-	ft_write(2, "\n", 1);	
+	ft_write(2, "\n", 1);
 }
 
 void	bench_print_info(t_stats **stats, t_flag_opt opt)
