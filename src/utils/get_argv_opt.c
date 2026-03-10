@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 11:08:30 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/02/27 11:09:29 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:38:34 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,3 @@ int	get_argv_opt(int argc, char **argv, int *bench, t_flag_opt *algorithm)
 	}
 	return (0);
 }
-

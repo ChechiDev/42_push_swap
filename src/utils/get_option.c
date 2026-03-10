@@ -6,7 +6,7 @@
 /*   By: sperez-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 11:12:20 by sperez-l          #+#    #+#             */
-/*   Updated: 2026/03/02 16:43:01 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:38:49 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ int	get_option(t_flag_opt *opt, t_stats *stats, t_options *o)
 	}
 	return (1);
 }
-

@@ -6,7 +6,7 @@
 /*   By: javisan2 <javisan2@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:32:03 by javisan2          #+#    #+#             */
-/*   Updated: 2026/03/10 12:26:28 by sperez-l         ###   ########.fr       */
+/*   Updated: 2026/03/10 13:53:22 by sperez-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	nearest_number(t_stacks s, long *arr, t_stats **bench)
 		while (bottom-- > 0)
 			rra(s.stack_a, bench);
 	}
-	pb(s.stack_a, s.stack_b);
+	pb(s.stack_a, s.stack_b, bench);
 	pivot = s.start + (s.end - s.start) / 2;
 	if (ft_lstsize(*s.stack_b) > 1 && (*s.stack_b)->content < arr[pivot])
 		rb(s.stack_b, bench);
@@ -95,7 +95,7 @@ void	get_chunks(t_stacks s, long *arr, t_stats **bench)
 		if (i == chunks - 1)
 			s.end = total_size - 1;
 		else
-			s.end = s.start + size -1;
+			s.end = s.start + size - 1;
 		while (in_range(*s.stack_a, arr, s.start, s.end))
 			nearest_number(s, arr, bench);
 		i++;
